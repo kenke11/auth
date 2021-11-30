@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\RegisterRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class RegisterController extends Controller
 {
@@ -12,7 +13,7 @@ class RegisterController extends Controller
         $registerField = $request->validated();
         $registerField['password'] = bcrypt($registerField['password']);
         User::create($registerField);
-        session()->flash('success', 'Your account has been created.');
-        return redirect()->route('profile');
+        Session::flash('success', 'Your account has been created.');
+        return redirect()->route('login');
     }
 }

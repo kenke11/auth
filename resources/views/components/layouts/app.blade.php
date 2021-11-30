@@ -16,5 +16,11 @@
         {{$slot}}
     </div>
 
+
+    @if(session('success'))
+        <x-success-notification message="{{session('success')}}"/>
+    @endif
+
+    <script src="{{asset('js/app.js')}}" ></script>
 </body>
 </html>
