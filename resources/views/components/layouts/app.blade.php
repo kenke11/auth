@@ -10,6 +10,8 @@
 </head>
 <body>
 
+    <x-home-header/>
+
     <div class="min-h-full">
         {{$slot}}
     </div>
