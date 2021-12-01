@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\SessionController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,6 +20,7 @@ Route::get('/', function () {
 })->name('home');
 
 Route::middleware('guest')->group(function(){
+    Route::post('/login', [SessionController::class, 'login'])->name('login');
 
     Route::prefix('login')->group(function() {
         Route::get('/', function (){
@@ -35,7 +37,10 @@ Route::middleware('guest')->group(function(){
 });
 
 Route::middleware('auth')->group(function (){
+
     Route::get('/profile', function () {
        return view('profile');
     })->name('profile');
+
+    Route::get('/logout', [SessionController::class, 'logout'])->name('logout');
 });

@@ -12,6 +12,7 @@
     <div>
         @auth
             <a href="{{ route('profile') }}" class="text-sm bg-indigo-600 hover:bg-indigo-700 px-5 py-3 text-white rounded-xl">Profile</a>
+            <a href="{{ route('logout') }}" class="text-sm bg-indigo-600 hover:bg-indigo-700 px-5 py-3 text-white rounded-xl">Log out</a>
         @else
             <a href="{{ route('login') }}" class="text-sm bg-indigo-600 hover:bg-indigo-700 px-5 py-3 text-white rounded-xl">Log in</a>
 
