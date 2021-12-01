@@ -9,12 +9,13 @@ use Illuminate\Support\Facades\Session;
 
 class RegisterController extends Controller
 {
-    public function store(RegisterRequest $request){
-        $registerField = $request->validated();
-        $registerField['password'] = bcrypt($registerField['password']);
-        $user = User::create($registerField);
-        Auth::login($user);
-        Session::flash('success', 'Your account has been created.');
-        return redirect()->route('profile');
-    }
+	public function store(RegisterRequest $request)
+	{
+		$registerField = $request->validated();
+		$registerField['password'] = bcrypt($registerField['password']);
+		$user = User::create($registerField);
+		Auth::login($user);
+		Session::flash('success', 'Your account has been created.');
+		return redirect()->route('profile');
+	}
 }
