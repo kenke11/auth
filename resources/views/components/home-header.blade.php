@@ -11,7 +11,7 @@
 
     <div>
         @auth
-            <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 bg-indigo-700">Home</a>
+            <a href="{{ route('profile') }}" class="text-sm bg-indigo-600 hover:bg-indigo-700 px-5 py-3 text-white rounded-xl">Profile</a>
         @else
             <a href="{{ route('login') }}" class="text-sm bg-indigo-600 hover:bg-indigo-700 px-5 py-3 text-white rounded-xl">Log in</a>
 

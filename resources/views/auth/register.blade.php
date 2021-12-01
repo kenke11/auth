@@ -15,7 +15,7 @@
                     <div>
                         <x-form.form-label for="name" data="Name" />
                         <div class="mt-1">
-                            <x-form.form-input id="name" name="name" type="text"  />
+                            <x-form.form-input id="name" name="name" type="text" old="true"/>
                         </div>
                         <x-form.form-input-error name="name"/>
                     </div>
@@ -23,7 +23,7 @@
                     <div>
                         <x-form.form-label for="email" data="Email address" />
                         <div class="mt-1">
-                            <x-form.form-input id="email" name="email" type="email"  />
+                            <x-form.form-input id="email" name="email" type="email"  old="true"/>
                         </div>
                         <x-form.form-input-error name="email"/>
                     </div>
@@ -31,7 +31,7 @@
                     <div>
                         <x-form.form-label for="password" data="Password" />
                         <div class="mt-1">
-                            <x-form.form-input id="password" name="password" type="password"  />
+                            <x-form.form-input id="password" name="password" type="password"  old="false"/>
                         </div>
                         <x-form.form-input-error name="password"/>
                     </div>
@@ -39,7 +39,7 @@
                     <div>
                         <x-form.form-label for="password_confirmation" data="Password Confirmation" />
                         <div class="mt-1">
-                            <x-form.form-input id="password_confirmation" name="password_confirmation" type="password"  />
+                            <x-form.form-input id="password_confirmation" name="password_confirmation" type="password"  old="false"/>
                         </div>
                         <x-form.form-input-error name="password_confirmation"/>
                     </div>
