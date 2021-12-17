@@ -16,31 +16,36 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+	return view('home');
 })->name('home');
 
-Route::middleware('guest')->group(function(){
-    Route::post('/login', [SessionController::class, 'login'])->name('login');
+Route::middleware('guest')->group(function () {
+	Route::post('/login', [SessionController::class, 'login'])->name('login');
 
-    Route::prefix('login')->group(function() {
-        Route::get('/', function (){
-            return view('auth.login');
-        })->name('login');
-    });
+	Route::prefix('login')->group(function () {
+		Route::get('/', function () {
+			return view('auth.login');
+		})->name('login.index');
+	});
 
-    Route::prefix('register')->group(function() {
-        Route::get('/', function (){
-            return view('auth.register');
-        })->name('register-show');
-        Route::post('/', [RegisterController::class, 'store'])->name('register.store');
-    });
+	Route::prefix('register')->group(function () {
+		Route::get('/', function () {
+			return view('auth.register');
+		})->name('register-show');
+		Route::post('/', [RegisterController::class, 'store'])->name('register.store');
+	});
 });
 
-Route::middleware('auth')->group(function (){
+Route::middleware('auth')->group(function () {
+	Route::get('/profile', function () {
+		return view('profile');
+	})->name('profile');
 
-    Route::get('/profile', function () {
-       return view('profile');
-    })->name('profile');
-
-    Route::get('/logout', [SessionController::class, 'logout'])->name('logout');
+	Route::get('/logout', [SessionController::class, 'logout'])->name('logout');
 });
+
+Route::get('/user/verify/{token}', [RegisterController::class, 'verifyEmail'])->name('verify-email');
+
+Route::get('/verified', function () {
+	return view('verified-email');
+})->name('verified');

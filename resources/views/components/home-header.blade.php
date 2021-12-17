@@ -35,7 +35,7 @@
                 </ul>
             </div>
         @else
-            <a href="{{ route('login') }}" class="text-sm bg-indigo-600 hover:bg-indigo-700 px-5 py-3 text-white rounded-xl">Log in</a>
+            <a href="{{ route('login.index') }}" class="text-sm bg-indigo-600 hover:bg-indigo-700 px-5 py-3 text-white rounded-xl">Log in</a>
 
             <a href="{{ route('register-show') }}" class="ml-4 text-sm bg-indigo-600 hover:bg-indigo-700 px-5 py-3 text-white rounded-xl">Register</a>
         @endauth
